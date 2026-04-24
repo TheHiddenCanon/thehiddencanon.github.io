@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Το Corpus Hermeticum & τα Χαμένα Κεφάλαιά του | The Hidden Canon</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+<style>
+  .article-hero { position: relative; padding: 7rem 3rem 5rem; max-width: 860px; margin: 0 auto; text-align: center; }
+  .article-hero::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 1px; height: 60px; background: linear-gradient(to bottom, transparent, var(--gold-dim)); }
+  .article-category { font-size: 0.58rem; letter-spacing: 0.42em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; display: inline-flex; align-items: center; gap: 1rem; }
+  .article-category::before, .article-category::after { content: ''; width: 24px; height: 1px; background: var(--gold-dim); }
+  .article-title { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.08; color: var(--white); margin-bottom: 1rem; }
+  .article-title em { color: var(--gold); font-style: italic; }
+  .article-subtitle { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.15rem; color: #7a7060; margin-bottom: 3rem; }
+  .article-meta { display: flex; align-items: center; justify-content: center; gap: 2rem; font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey); flex-wrap: wrap; }
+  .meta-dot { width: 3px; height: 3px; background: var(--gold-dim); border-radius: 50%; }
+  .article-body { max-width: 680px; margin: 0 auto; padding: 0 3rem 6rem; }
+  .article-body p { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 1.18rem; line-height: 1.88; color: var(--text); margin-bottom: 1.8rem; }
+  .article-body p:first-of-type::first-letter { font-family: 'Cormorant Garamond', serif; font-size: 4.8rem; font-weight: 600; float: left; line-height: 0.72; margin-right: 0.1em; margin-top: 0.1em; color: var(--gold); }
+  .article-body h2 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 1.6rem; letter-spacing: 0.06em; color: var(--white); margin: 3.5rem 0 1.2rem; padding-bottom: 0.6rem; border-bottom: 1px solid rgba(201,168,76,0.14); }
+  .article-body em { color: var(--gold-light); font-style: italic; }
+  .article-body strong { color: var(--white); font-weight: 400; }
+  .pull-quote { border-left: 2px solid var(--gold); margin: 3rem 0; padding: 1.5rem 2rem; background: rgba(201,168,76,0.025); }
+  .pull-quote p { font-family: 'Cormorant Garamond', serif !important; font-style: italic !important; font-size: 1.38rem !important; line-height: 1.6 !important; color: var(--white) !important; margin-bottom: 0.6rem !important; }
+  .pull-quote p::first-letter { all: unset !important; float: none !important; }
+  .pull-quote cite { font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-dim); font-style: normal; }
+  .section-break { text-align: center; color: var(--gold-dim); font-size: 0.7rem; letter-spacing: 0.5em; margin: 3rem 0; opacity: 0.5; }
+  .footnote-block { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(201,168,76,0.1); }
+  .footnote-block p { font-size: 0.78rem !important; line-height: 1.6 !important; color: #4a4540 !important; margin-bottom: 0.5rem !important; font-family: 'DM Sans', sans-serif !important; }
+  .footnote-block p::first-letter { all: unset !important; }
+  .article-tags { max-width: 680px; margin: 0 auto; padding: 0 3rem 3rem; display: flex; gap: 0.6rem; flex-wrap: wrap; }
+  .tag { font-size: 0.52rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold-dim); border: 1px solid rgba(201,168,76,0.18); padding: 0.32rem 0.8rem; }
+  .back-link { max-width: 680px; margin: 0 auto; padding: 2rem 3rem 5rem; }
+  .back-link a { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; }
+  .back-link a::before { content: '←'; }
+  @media (max-width: 768px) { .article-hero { padding: 5rem 1.5rem 3rem; } .article-body, .article-tags, .back-link { padding-left: 1.5rem; padding-right: 1.5rem; } }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">The Hidden Canon</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Αρχική</a></li>
+    <li><a href="articles.html" class="active">Άρθρα</a></li>
+    <li><a href="about.html">Σχετικά</a></li>
+  </ul>
+  <a href="index.html#subscribe" class="nav-subscribe">Εγγραφή</a>
+</nav>
+
+<div class="article-hero">
+  <div class="article-category">Ερμητισμός · Τεύχος Ι</div>
+  <h1 class="article-title">Το <em>Corpus Hermeticum</em><br>& τα Χαμένα Κεφάλαιά του</h1>
+  <p class="article-subtitle">Ιχνηλατώντας τα χειρόγραφα από την Αλεξάνδρεια ως τη Βιβλιοθήκη των Μεδίκων — και τι παραλείφθηκε σκόπιμα</p>
+  <div class="article-meta">
+    <span>The Hidden Canon</span><div class="meta-dot"></div>
+    <span>Ιανουάριος 2025</span><div class="meta-dot"></div>
+    <span>~8 λεπτά ανάγνωση</span>
+  </div>
+</div>
+
+<div class="ornament">
+  <div class="ornament-line"></div>
+  <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#c9a84c" stroke-width="0.5"/><circle cx="10" cy="10" r="2" fill="#c9a84c"/><line x1="10" y1="1" x2="10" y2="5" stroke="#c9a84c" stroke-width="0.5"/><line x1="10" y1="15" x2="10" y2="19" stroke="#c9a84c" stroke-width="0.5"/><line x1="1" y1="10" x2="5" y2="10" stroke="#c9a84c" stroke-width="0.5"/><line x1="15" y1="10" x2="19" y2="10" stroke="#c9a84c" stroke-width="0.5"/></svg>
+  <div class="ornament-line right"></div>
+</div>
+
+<div class="article-body">
+  <p>Κάπου μεταξύ του δεύτερου και τρίτου αιώνα της κοινής εποχής, στην πόλη της Αλεξάνδρειας — εκείνο το ανήσυχο σταυροδρόμι ελληνικής φιλοσοφίας, αιγυπτιακής θεολογίας και εβραϊκής μυστικής σκέψης — άρχισε να κυκλοφορεί ένα σώμα κειμένων κάτω από ένα μόνο αδύνατο όνομα. Ισχυρίζονταν ότι ήταν η άμεση παράδοση του <em>Ερμή Τρισμέγιστου</em>, του Τρις-Μέγιστου: μια φιγούρα ούτε πλήρως ανθρώπινη ούτε πλήρως θεϊκή. Αυτό που σήμερα αποκαλούμε <em>Corpus Hermeticum</em> είναι, σε κάθε ουσιαστική έννοια, ένα θραύσμα κάτι πολύ μεγαλύτερου.</p>
+
+  <h2>Ι. Η Μορφή Αυτού που Επέζησε</h2>
+  <p>Το Corpus Hermeticum αποτελείται από δεκαεπτά πραγματείες. Η πιο γνωστή είναι το <em>Ποιμάνδρης</em> — η πρώτη πραγματεία, στην οποία ο αφηγητής επισκέπτεται ένα τεράστιο φωτεινό ον που αναγνωρίζεται ως ο Νους της Κυριαρχίας. Ωστόσο, αρχαίες πηγές αναφέρονται σε πολύ εκτενέστερη Ερμητική γραμματεία. Ο <em>Κατάλογος του Μανέθωνα</em> αποδίδει στον Ερμή <strong>36.525 βιβλία</strong>. Από αυτά, έχουμε δεκαεπτά πραγματείες. Τα υπόλοιπα είναι σιωπή.</p>
+
+  <div class="pull-quote">
+    <p>«Ο νους που γνώρισε τον εαυτό του γίνεται, κατά κάποιον τρόπο, αυτό που γνώρισε. Αυτό δεν είναι μεταφορά.»</p>
+    <cite>— Corpus Hermeticum, Πραγματεία Χ (παράφραση)</cite>
+  </div>
+
+  <h2>ΙΙ. Η Αλεξάνδρεια και η Αρχιτεκτονική της Απώλειας</h2>
+  <p>Η Βιβλιοθήκη δεν πέθανε σε μια νύχτα. Μειώθηκε σε διάστημα αιώνων — από την τυχαία πυρκαγιά του Ιουλίου Καίσαρα το 48 π.Χ., ως το διάταγμα του Θεόφιλου το 391 μ.Χ. Τα φιλοσοφικά κείμενα επέζησαν επειδή χριστιανοί μελετητές βρήκαν σε αυτά μια <em>prisca theologia</em>. Τα τελετουργικά κείμενα δεν είχαν τέτοια προστασία. <strong>Δεν χάθηκαν απλώς. Καταστράφηκαν ενεργά.</strong></p>
+
+  <div class="section-break">· · ·</div>
+
+  <h2>ΙΙΙ. Η Αναγέννηση των Μεδίκων</h2>
+  <p>Το 1460, ένας μοναχός ονόματι Λεονάρδο ντα Πιστόια έφτασε στη Φλωρεντία κρατώντας ένα ελληνικό χειρόγραφο. Ο Κόζιμο ντε Μέντιτσι έδωσε εντολή στον Μαρσίλιο Φιτσίνο να αφήσει τον Πλάτωνα στην άκρη και να μεταφράσει πρώτα το Ερμητικό χειρόγραφο. <em>Ο Πλάτωνας μπορούσε να περιμένει. Ο Ερμής όχι.</em></p>
+
+  <h2>ΙV. Τι Μπορεί να Περιείχαν τα Χαμένα Κεφάλαια</h2>
+  <p>Αυτό που τα χαμένα κεφάλαια μπορεί να περιείχαν είναι η <em>επιχειρησιακή</em> διάσταση της παράδοσης: οι συγκεκριμένες τεχνικές με τις οποίες η φιλοσοφική γνώση επρόκειτο να ενσωματωθεί και να γίνει πραγματική. Το επιζών Corpus μας λέει <em>τι</em> είναι η πραγματικότητα. Αυτό που χάθηκε μπορεί να μας έλεγε τι να κάνουμε γι' αυτήν.</p>
+
+  <div class="pull-quote">
+    <p>«Ως άνω, ούτω κάτω· ως κάτω, ούτω άνω — για να επιτελεστεί το θαύμα του ενός πράγματος.»</p>
+    <cite>— Σμαράγδινη Πλάκα, αποδιδόμενη στον Ερμή Τρισμέγιστο</cite>
+  </div>
+
+  <h2>V. Η Ζωντανή Παράδοση</h2>
+  <p>Η Ερμητική παράδοση επέμεινε πάντα ότι το πιο σημαντικό περιεχόμενό της δεν μπορεί να μεταδοθεί μέσα από κείμενα. Τα χαμένα κεφάλαια είναι χαμένα. Αλλά η παράδοση, φαίνεται, δεν εξαρτιόταν ποτέ πλήρως από αυτά.</p>
+
+  <div class="footnote-block">
+    <p><strong>Πηγές:</strong> Corpus Hermeticum, μτφρ. Brian Copenhaver (1992). Garth Fowden, <em>The Egyptian Hermes</em> (1986). Frances Yates, <em>Giordano Bruno and the Hermetic Tradition</em> (1964).</p>
+  </div>
+</div>
+
+<div class="article-tags">
+  <span class="tag">Ερμητισμός</span><span class="tag">Corpus Hermeticum</span><span class="tag">Αλεξάνδρεια</span><span class="tag">Φιτσίνο</span>
+</div>
+
+<div class="back-link"><a href="articles.html">Πίσω στα Άρθρα</a></div>
+
+<div id="subscribe" class="subscribe-section">
+  <h2>Εισέλθετε στον Κανόνα</h2>
+  <p>Νέα τεύχη κάθε μήνα. Ελεύθερη πρόσβαση για όλους.</p>
+  <form name="newsletter" method="POST" data-netlify="true" class="subscribe-form">
+    <input type="email" name="email" placeholder="email@παράδειγμα.gr" required autocomplete="email">
+    <button type="submit">Εγγραφή</button>
+  </form>
+</div>
+<footer>
+  <div class="footer-logo">The Hidden Canon</div>
+  <div class="footer-text">Τεύχος Ι · 2025</div>
+  <div class="footer-text">✦ Omnia in Mentis ✦</div>
+</footer>
+</body>
+</html>

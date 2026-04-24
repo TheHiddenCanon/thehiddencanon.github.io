@@ -90,7 +90,7 @@
     const filtered = activeFilter === 'all' ? articles : articles.filter(a => a.category === activeFilter);
     if (!filtered.length) { list.innerHTML = '<div class="loading-msg">Δεν βρέθηκαν άρθρα.</div>'; return; }
     list.innerHTML = filtered.map((a, i) => `
-      <a href="article.html?slug=${a.slug}" class="article-row">
+      <a href="${a.slug}.html" class="article-row">
         <div class="row-number">${String(i+1).padStart(2,'0')}</div>
         <div class="row-body">
           <div class="row-category">${a.category}</div>
