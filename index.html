@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Hidden Canon | Issue I — The Visitor</title>
+<meta name="description" content="A journal of esoteric history, occult philosophy, and the hidden traditions of Western thought. Issue I: The Visitor Trilogy.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ── HERO ── */
+  header {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    overflow: hidden;
+  }
+
+  .ouroboros {
+    position: absolute;
+    width: 520px; height: 520px;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.16;
+    animation: rotate 120s linear infinite;
+    pointer-events: none;
+  }
+
+  .top-rule {
+    width: 1px; height: 80px;
+    background: linear-gradient(to bottom, transparent, var(--gold));
+    margin-bottom: 2rem;
+    animation: fadeDown 1.2s ease forwards;
+    opacity: 0;
+  }
+
+  .issue-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.38em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.4s forwards;
+  }
+
+  .masthead {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(4rem, 13vw, 9.5rem);
+    line-height: 0.88;
+    letter-spacing: 0.12em;
+    text-align: center;
+    color: var(--white);
+    opacity: 0;
+    animation: fadeUp 1s ease 0.6s forwards;
+  }
+  .masthead span {
+    display: block;
+    color: var(--gold);
+    font-style: italic;
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    letter-spacing: 0.18em;
+  }
+
+  .tagline {
+    margin-top: 2.5rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    text-align: center;
+    opacity: 0;
+    animation: fadeUp 1s ease 1s forwards;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    opacity: 0;
+    animation: fadeUp 1s ease 1.2s forwards;
+  }
+  .divider-line { width: 60px; height: 1px; background: linear-gradient(to right, transparent, var(--gold-dim)); }
+  .divider-line.right { background: linear-gradient(to left, transparent, var(--gold-dim)); }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem; left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.58rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--grey);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    animation: fadeUp 1s ease 2s forwards;
+  }
+  .scroll-hint::after {
+    content: '';
+    width: 1px; height: 40px;
+    background: linear-gradient(to bottom, var(--grey), transparent);
+    animation: pulse 2s ease infinite;
+  }
+
+  /* ── INTRO ── */
+  .intro-section {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 6rem 3rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+  .intro-section p {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 1.25rem;
+    line-height: 1.9;
+    color: #8a8070;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .intro-section p em { color: var(--gold-light); font-style: italic; }
+
+  /* ── TRILOGY ── */
+  .trilogy-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 3rem 6rem;
+  }
+
+  .trilogy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 3rem;
+  }
+
+  .trilogy-card {
+    background: var(--deep);
+    padding: 3rem 2.5rem;
+    border: 1px solid rgba(201,168,76,0.07);
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: border-color 0.3s, background 0.3s;
+    overflow: hidden;
+  }
+  .trilogy-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    transform-origin: left;
+  }
+  .trilogy-card:hover { border-color: rgba(201,168,76,0.25); background: #111009; }
+  .trilogy-card:hover::before { transform: scaleX(1); }
+
+  .card-part {
+    font-size: 0.55rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 1.5rem;
+  }
+
+  .card-roman {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 4rem;
+    color: rgba(201,168,76,0.1);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    transition: color 0.3s;
+  }
+  .trilogy-card:hover .card-roman { color: rgba(201,168,76,0.2); }
+
+  .card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+
+  .card-excerpt {
+    font-size: 0.82rem;
+    line-height: 1.75;
+    color: #5a5248;
+    margin-bottom: 2rem;
+  }
+
+  .card-read {
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: gap 0.3s;
+  }
+  .card-read::after { content: '→'; }
+  .trilogy-card:hover .card-read { gap: 0.9rem; }
+
+  .card-meta {
+    position: absolute;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    font-size: 0.5rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--grey);
+  }
+
+  /* ── QUOTE ── */
+  .quote-break {
+    background: var(--deep);
+    border-left: 2px solid var(--gold);
+    padding: 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .quote-break::before {
+    content: '\201C';
+    position: absolute;
+    top: -2rem; left: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14rem;
+    color: rgba(201,168,76,0.04);
+    line-height: 1;
+    pointer-events: none;
+  }
+  .quote-break blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(1.6rem, 3.5vw, 3rem);
+    line-height: 1.35;
+    color: var(--white);
+    max-width: 820px;
+    position: relative;
+    z-index: 1;
+  }
+  .quote-break blockquote em { color: var(--gold); font-style: normal; }
+  .quote-attribution {
+    margin-top: 1.5rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+  }
+
+  /* ── ABOUT ── */
+  .about-strip {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 6rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    border-top: 1px solid rgba(201,168,76,0.1);
+  }
+  .about-strip h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+  }
+  .about-strip h2 em { color: var(--gold); font-style: italic; }
+  .about-strip p {
+    font-size: 0.88rem;
+    line-height: 1.85;
+    color: #6a6058;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 900px) {
+    .trilogy-grid { grid-template-columns: 1fr; }
+    .about-strip { grid-template-columns: 1fr; gap: 2rem; }
+    .trilogy-section, .intro-section { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .quote-break { padding: 3rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header>
+  <svg class="ouroboros" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="200" cy="200" r="185" fill="none" stroke="#c9a84c" stroke-width="0.4" opacity="0.3"/>
+    <circle cx="200" cy="200" r="110" fill="none" stroke="#c9a84c" stroke-width="0.4" opacity="0.2"/>
+    <path d="M 200 25 C 290 25, 370 95, 375 185 C 380 275, 320 358, 230 375 C 140 392, 45 335, 28 245 C 11 155, 65 65, 155 35 C 170 30, 185 26, 200 25"
+      fill="none" stroke="#c9a84c" stroke-width="14" stroke-linecap="round" opacity="0.7"/>
+    <path d="M 200 25 C 290 25, 370 95, 375 185 C 380 275, 320 358, 230 375 C 140 392, 45 335, 28 245 C 11 155, 65 65, 155 35 C 170 30, 185 26, 200 25"
+      fill="none" stroke="#e2c97e" stroke-width="4" stroke-linecap="round" opacity="0.2" stroke-dasharray="6 10"/>
+    <ellipse cx="200" cy="25" rx="16" ry="11" fill="#0f0e0c" stroke="#c9a84c" stroke-width="1.5" opacity="0.9"/>
+    <circle cx="205" cy="22" r="2.5" fill="#c9a84c" opacity="0.9"/>
+    <circle cx="205" cy="22" r="1" fill="#080808"/>
+    <path d="M 188 28 L 178 33 M 178 33 L 173 30 M 178 33 L 173 37" fill="none" stroke="#c9a84c" stroke-width="1.2" opacity="0.8"/>
+    <path d="M 157 35 C 165 28, 178 25, 188 27" fill="none" stroke="#c9a84c" stroke-width="8" stroke-linecap="round" opacity="0.6"/>
+    <circle cx="200" cy="200" r="18" fill="none" stroke="#c9a84c" stroke-width="0.8" opacity="0.5"/>
+    <circle cx="200" cy="200" r="4" fill="#c9a84c" opacity="0.6"/>
+    <line x1="200" y1="175" x2="200" y2="185" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+    <line x1="200" y1="215" x2="200" y2="225" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+    <line x1="175" y1="200" x2="185" y2="200" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+    <line x1="215" y1="200" x2="225" y2="200" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+  </svg>
+
+  <div class="top-rule"></div>
+  <div class="issue-label">Issue I · The Visitor Trilogy</div>
+  <h1 class="masthead">The<br><span>Hidden</span>Canon</h1>
+  <p class="tagline">Esoteric History · Occult Philosophy · Hidden Tradition</p>
+  <div class="divider">
+    <div class="divider-line"></div>
+    <span style="color:var(--gold)">✦</span>
+    <div class="divider-line right"></div>
+  </div>
+  <div class="scroll-hint">Scroll</div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">The Hidden Canon</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="the-visitor-i.html">The Visitor</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <a href="#subscribe" class="nav-subscribe">Subscribe</a>
+</nav>
+
+<!-- INTRO -->
+<div class="intro-section">
+  <p>A journal of esoteric history, occult philosophy, and the hidden traditions of Western thought. Our first issue is given entirely to a single inquiry: <em>the recurring encounter, across centuries and cultures, with an intelligence that presents itself as non-human — and what this means.</em></p>
+</div>
+
+<!-- TRILOGY -->
+<div class="trilogy-section">
+  <div class="section-label">Issue I — The Visitor Trilogy</div>
+  <div class="trilogy-grid">
+
+    <a href="the-visitor-i.html" class="trilogy-card">
+      <div class="card-part">Part One</div>
+      <div class="card-roman">I</div>
+      <div class="card-title">The Visitor</div>
+      <p class="card-excerpt">The Golden Dawn, Crowley, the Tarot, and the recurring appearance of an entity no one can name — but many have met. An investigation into the pattern that runs beneath Western esotericism.</p>
+      <span class="card-read">Read</span>
+      <div class="card-meta">~20 min</div>
+    </a>
+
+    <a href="the-visitor-ii.html" class="trilogy-card">
+      <div class="card-part">Part Two</div>
+      <div class="card-roman">II</div>
+      <div class="card-title">The Chain of Evidence</div>
+      <p class="card-excerpt">A 1918 drawing, a government-funded study at the University of New Mexico, and the neuroscience of DMT entities. What the evidence tells us — and what it cannot explain.</p>
+      <span class="card-read">Read</span>
+      <div class="card-meta">~20 min</div>
+    </a>
+
+    <a href="the-visitor-iii.html" class="trilogy-card">
+      <div class="card-part">Part Three</div>
+      <div class="card-roman">III</div>
+      <div class="card-title">What You Do With What You Receive</div>
+      <p class="card-excerpt">Crowley, Parsons, and Hubbard. Three men who stood at the same threshold. One was consumed. One was transformed. One built a religion from the wreckage.</p>
+      <span class="card-read">Read</span>
+      <div class="card-meta">~20 min</div>
+    </a>
+
+  </div>
+</div>
+
+<!-- QUOTE -->
+<div class="quote-break">
+  <blockquote>"The Visitor keeps arriving. Each age reaches for the most extreme vocabulary available — because ordinary vocabulary is not adequate to describe what happens when the membrane between the known and the unknown becomes, briefly, <em>permeable.</em>"</blockquote>
+  <div class="quote-attribution">— The Hidden Canon, Issue I</div>
+</div>
+
+<!-- ABOUT STRIP -->
+<div class="about-strip">
+  <div>
+    <h2>About <em>The Canon</em></h2>
+    <p>The Hidden Canon is an independent journal devoted to the serious study of esoteric history, occult philosophy, and the hidden traditions of Western thought.</p>
+    <p>We treat our subjects with the same rigour applied to any other field of historical and philosophical inquiry. We follow the evidence — wherever it leads.</p>
+  </div>
+  <div>
+    <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; color:#7a7060; line-height:1.8;">A <em>canon</em> is a body of authoritative texts — the recognised, the approved, the officially transmitted. The hidden canon is everything else: the knowledge that circulated in margins and ciphers, the transmissions that survived not through institutions but through individuals who understood what they were carrying.</p>
+    <p style="margin-top:1rem;"><a href="about.html" style="font-size:0.6rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold); text-decoration:none;">Read more →</a></p>
+  </div>
+</div>
+
+<!-- SUBSCRIBE -->
+<div id="subscribe" class="subscribe-section">
+  <h2>Enter the Canon</h2>
+  <p>New issues delivered when they are ready. Free access, always.</p>
+  <form name="newsletter" method="POST" data-netlify="true" class="subscribe-form">
+    <input type="email" name="email" placeholder="your@email.com" required autocomplete="email">
+    <button type="submit">Subscribe</button>
+  </form>
+  <p style="margin-top:1.5rem; font-size:0.58rem; color:#3a3530; letter-spacing:0.1em;">Or write to us: <a href="mailto:thehiddencanon@proton.me" style="color:var(--gold-dim); text-decoration:none;">thehiddencanon@proton.me</a></p>
+</div>
+
+<footer>
+  <div class="footer-logo">The Hidden Canon</div>
+  <div class="footer-text">Issue I · 2025</div>
+  <div class="footer-text">✦ Omnia in Mentis ✦</div>
+</footer>
+
+</body>
+</html>

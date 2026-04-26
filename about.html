@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | The Hidden Canon</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+<style>
+  .about-wrap { max-width: 720px; margin: 0 auto; padding: 7rem 3rem 6rem; }
+  .about-wrap h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(3rem, 7vw, 6rem); line-height: 0.92; letter-spacing: 0.08em; color: var(--white); margin-bottom: 3rem; }
+  .about-wrap h1 em { color: var(--gold); font-style: italic; display: block; }
+  .about-wrap p { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 1.18rem; line-height: 1.88; color: var(--text); margin-bottom: 1.8rem; }
+  .about-wrap h2 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 1.5rem; letter-spacing: 0.06em; color: var(--white); margin: 3rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(201,168,76,0.14); }
+  .about-wrap em { color: var(--gold-light); font-style: italic; }
+  .contact-block { margin-top: 3rem; padding: 2rem 2.5rem; background: rgba(201,168,76,0.04); border: 1px solid rgba(201,168,76,0.15); }
+  .contact-block p { font-size: 0.88rem !important; line-height: 1.8 !important; color: #8a8070 !important; margin-bottom: 0.5rem !important; }
+  .contact-block a { color: var(--gold); text-decoration: none; }
+  @media (max-width: 768px) { .about-wrap { padding: 5rem 1.5rem 4rem; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">The Hidden Canon</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="the-visitor-i.html">The Visitor</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+  </ul>
+  <a href="index.html#subscribe" class="nav-subscribe">Subscribe</a>
+</nav>
+
+<div class="about-wrap">
+  <h1>About<em>The Canon</em></h1>
+
+  <p><em>The Hidden Canon</em> is an independent journal devoted to the serious study of esoteric history, occult philosophy, and the hidden traditions of Western thought. We treat our subjects with the same rigour applied to any other field of historical and philosophical inquiry. We do not proselytise. We follow the evidence — wherever it leads.</p>
+
+  <h2>What We Cover</h2>
+
+  <p>Our primary focus is the intersection of esotericism, history, and ideas: how hidden traditions have shaped — and been shaped by — the broader intellectual currents of Western civilisation. This includes Hermeticism, Kabbalah, the occult revival of the nineteenth and twentieth centuries, the history of magical orders, and the recurring questions these traditions raise about the nature of consciousness, knowledge, and experience.</p>
+
+  <p>We are equally interested in the archaeology of ideas: where traditions come from, how they are transmitted, what survives suppression, and what is lost. The history of what has been <em>excluded</em> from official knowledge is as important as the history of what has been included.</p>
+
+  <h2>Issue I — The Visitor</h2>
+
+  <p>Our first issue is given entirely to a single inquiry, pursued across three interconnected essays: the recurring encounter, in Western esoteric history, with an intelligence that presents itself as non-human. Beginning with the Golden Dawn and Aleister Crowley, moving through the neuroscience of altered states and the work of Frederic Myers, and arriving at the triangle of Crowley, Parsons, and Hubbard — The Visitor Trilogy asks not whether such encounters are "real," but what they reveal about the structure of human experience, and what separates those who navigate them honestly from those who exploit them.</p>
+
+  <h2>The Name</h2>
+
+  <p>A <em>canon</em> is a body of authoritative texts — the recognised, the approved, the officially transmitted. The hidden canon is everything else: the knowledge that circulated in margins and ciphers, the transmissions that survived not through institutions but through individuals who understood what they were carrying.</p>
+
+  <p>We are interested in that second archive.</p>
+
+  <h2>Contact</h2>
+
+  <div class="contact-block">
+    <p>For correspondence, submissions, or enquiries:</p>
+    <p><a href="mailto:thehiddencanon@proton.me">thehiddencanon@proton.me</a></p>
+    <p style="margin-top:1rem; font-size:0.75rem !important; color:#4a4540 !important;">We read everything. We respond when we can.</p>
+  </div>
+
+</div>
+
+<div id="subscribe" class="subscribe-section">
+  <h2>Enter the Canon</h2>
+  <p>New issues delivered when they are ready. Free access, always.</p>
+  <form name="newsletter" method="POST" data-netlify="true" class="subscribe-form">
+    <input type="email" name="email" placeholder="your@email.com" required autocomplete="email">
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+
+<footer>
+  <div class="footer-logo">The Hidden Canon</div>
+  <div class="footer-text">Issue I · 2025</div>
+  <div class="footer-text">✦ Omnia in Mentis ✦</div>
+</footer>
+
+</body>
+</html>
