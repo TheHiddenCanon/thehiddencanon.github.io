@@ -191,7 +191,72 @@
 <div id="subscribe" class="subscribe-section">
   <h2>Enter the Canon</h2>
   <p>New issues delivered when they are ready. Free access, always.</p>
-  <p style="margin-top:1rem; font-size:0.78rem; color:#7a6230; letter-spacing:0.1em;">Write to us: <a href="mailto:thehiddencanon@proton.me" style="color:var(--gold); text-decoration:none;">thehiddencanon@proton.me</a></p>
+
+  <!-- Brevo Form -->
+  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+  <style>
+    #sib-container { background-color: transparent !important; border: 1px solid rgba(201,168,76,0.25) !important; border-radius: 0 !important; max-width: 480px !important; margin: 2rem auto 0 !important; }
+    #sib-container input { background: rgba(201,168,76,0.04) !important; border: none !important; color: var(--white) !important; font-family: "DM Sans", sans-serif !important; font-size: 1rem !important; border-radius: 0 !important; }
+    #sib-container input::placeholder { color: #3a3530 !important; }
+    #sib-container .sib-form-block p { color: var(--gold) !important; font-family: "Cormorant Garamond", serif !important; font-size: 0 !important; display: none !important; }
+    #sib-container .sib-text-form-block { display: none !important; }
+    #sib-container .entry__label { display: none !important; }
+    #sib-container .entry__specification { display: none !important; }
+    .sib-form-block__button { background-color: var(--gold) !important; color: #080808 !important; font-family: "DM Sans", sans-serif !important; font-size: 0.72rem !important; letter-spacing: 0.2em !important; border-radius: 0 !important; padding: 1rem 2rem !important; width: 100% !important; cursor: pointer !important; }
+    .sib-form-block__button:hover { background-color: var(--gold-light) !important; }
+    .sib-form { background-color: transparent !important; }
+    #error-message, #success-message { max-width: 480px !important; margin: 0 auto !important; font-family: "DM Sans", sans-serif !important; font-size: 0.8rem !important; }
+  </style>
+
+  <div class="sib-form" style="text-align:center; background-color:transparent;">
+    <div id="sib-form-container" class="sib-form-container">
+      <div id="error-message" class="sib-form-message-panel" style="font-size:14px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949; max-width:480px; margin:0 auto;">
+        <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+          <span class="sib-form-message-panel__inner-text">Your subscription could not be saved. Please try again.</span>
+        </div>
+      </div>
+      <div id="success-message" class="sib-form-message-panel" style="font-size:14px; text-align:left; font-family:Helvetica, sans-serif; color:#085229; background-color:#e7faf0; border-radius:3px; border-color:#13ce66; max-width:480px; margin:0 auto;">
+        <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+          <span class="sib-form-message-panel__inner-text">Your subscription has been successful.</span>
+        </div>
+      </div>
+      <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:center; max-width:480px; direction:ltr">
+        <form id="sib-form" method="POST" action="https://7c161605.sibforms.com/serve/MUIFAFy6J9fgryF1YQcsi-6hNmsqtKa3X5gxPLb7P-VghYBq5yNg725gGL_cJlzRl0scsqrrPb8SJoXgbzfjUA4Z1Z8RUMy8tEHbFG4N5KE5i1A17X4Au4QJ5Tv9hqBb94eojVcN5IGotv_2UkSfK9vU8k5UwQUc2awIklV7WXdyyRrnipXPA2zzxCKS7qoFIg3rbBbg_OfZAtr1RQ==" data-type="subscription">
+          <div style="padding: 8px 0;">
+            <div class="sib-input sib-form-block">
+              <div class="form__entry entry_block">
+                <div class="form__label-row">
+                  <div class="entry__field">
+                    <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="email" placeholder="your@email.com" data-required="true" required style="font-size:1rem;" />
+                  </div>
+                </div>
+                <label class="entry__error entry__error--primary" style="font-size:14px; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;"></label>
+              </div>
+            </div>
+          </div>
+          <div style="padding: 8px 0;">
+            <div class="sib-form-block" style="text-align:center">
+              <button class="sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">SUBSCRIBE</button>
+            </div>
+          </div>
+          <input type="text" name="email_address_check" value="" class="input--hidden">
+          <input type="hidden" name="locale" value="en">
+        </form>
+      </div>
+    </div>
+  </div>
+  <script>
+    window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
+    window.LOCALE = 'en';
+    window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+    window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank.";
+    window.GENERIC_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+    window.translation = { common: { selectedList: '{quantity} list selected', selectedLists: '{quantity} lists selected', selectedOption: '{quantity} selected', selectedOptions: '{quantity} selected' } };
+    var AUTOHIDE = Boolean(0);
+  </script>
+  <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+
+  <p style="margin-top:1.5rem; font-size:0.58rem; color:#3a3530; letter-spacing:0.1em;">Or write to us: <a href="mailto:thehiddencanon@proton.me" style="color:var(--gold-dim); text-decoration:none;">thehiddencanon@proton.me</a></p>
 </div>
 
 <footer>
