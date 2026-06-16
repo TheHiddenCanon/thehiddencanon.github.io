@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>·</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400&display=swap');
+  :root{ --black:#080808; --gold:#c9a84c; --gold-light:#e2c97e; --gold-dim:#7a6230; --white:#f0ead8; --text:#c8bfb0; --grey:#4a4540; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-weight:300;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow-x:hidden;padding:3rem 1.5rem}
+  body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1;opacity:0.4}
+  .wrap{position:relative;z-index:2;max-width:620px;text-align:center}
+  .mark{font-size:0.6rem;letter-spacing:0.42em;text-transform:uppercase;color:var(--gold);margin-bottom:2.5rem;display:inline-flex;align-items:center;gap:1rem}
+  .mark::before,.mark::after{content:'';width:24px;height:1px;background:var(--gold-dim)}
+  .glyph{margin:0 auto 2.5rem;width:120px;height:120px;display:block}
+  .glyph .spin{transform-origin:60px 60px;animation:rot 36s linear infinite}
+  @keyframes rot{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(3rem,9vw,5.5rem);letter-spacing:0.06em;color:var(--white);line-height:1;margin-bottom:0.5rem}
+  h1 em{color:var(--gold);font-style:italic}
+  .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.25rem;color:var(--gold-dim);margin-bottom:3rem}
+  p{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:1.2rem;line-height:1.9;color:var(--text);margin-bottom:1.6rem}
+  p em{color:var(--gold-light);font-style:italic}
+  .rule{width:60px;height:1px;background:var(--gold-dim);margin:2.5rem auto}
+  .small{font-size:0.95rem;color:#8a8070;line-height:1.8}
+  a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.3)}
+  a:hover{color:var(--gold-light)}
+  .home{display:inline-block;margin-top:3rem;font-family:'DM Sans',sans-serif;font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--grey);border:none}
+  .home:hover{color:var(--gold)}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mark">You Have Arrived</div>
+
+    <svg class="glyph" viewBox="0 0 120 120" fill="none">
+      <g class="spin">
+        <circle cx="60" cy="60" r="52" stroke="#c9a84c" stroke-width="0.8" opacity="0.5"/>
+        <circle cx="60" cy="60" r="40" stroke="#7a6230" stroke-width="0.5" opacity="0.6"/>
+        <path d="M60 14 L98 60 L60 106 L22 60 Z" stroke="#c9a84c" stroke-width="0.6" opacity="0.5" fill="none"/>
+        <line x1="60" y1="8" x2="60" y2="40" stroke="#e2c97e" stroke-width="1"/>
+      </g>
+      <circle cx="60" cy="60" r="5" fill="#c9a84c"/>
+      <circle cx="60" cy="60" r="11" stroke="#7a6230" stroke-width="1" fill="none"/>
+    </svg>
+
+    <h1>Da'<em>ath</em></h1>
+    <div class="sub">— the threshold you decoded —</div>
+
+    <p>You read it as a message. It was an <em>address</em>.</p>
+
+    <p>This is the whole argument, enacted in miniature. The cipher contained no meaning to be extracted. It contained a <em>location</em> — and the only way to receive it was to arrive.</p>
+
+    <p>This is what we believe the tradition has always transmitted: not answers, but coordinates. Not content, but the way to the threshold. The Visitor sends no messages. It leaves a door, and the means to find it.</p>
+
+    <div class="rule"></div>
+
+    <p class="small">You are among the few who crossed. If you wish to go further in — the complete private edition, and first word of <em>Issue VI: The New Threshold</em> — write to us, and say only: <em>I arrived at Da'ath.</em></p>
+
+    <p class="small"><a href="mailto:thehiddencanon@proton.me?subject=I%20arrived%20at%20Da'ath">thehiddencanon@proton.me</a></p>
+
+    <a href="index.html" class="home">← Return to the surface</a>
+  </div>
+</body>
+</html>
