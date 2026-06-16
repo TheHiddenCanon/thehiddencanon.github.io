@@ -3,66 +3,559 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex, nofollow">
-<title>·</title>
-<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<title>The Hidden Canon | Issue I — The Visitor</title>
+<meta name="description" content="A journal of esoteric history, occult philosophy, and the hidden traditions of Western thought. Issue I: The Visitor Trilogy.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400&display=swap');
-  :root{ --black:#080808; --gold:#c9a84c; --gold-light:#e2c97e; --gold-dim:#7a6230; --white:#f0ead8; --text:#c8bfb0; --grey:#4a4540; }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-weight:300;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow-x:hidden;padding:3rem 1.5rem}
-  body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1;opacity:0.4}
-  .wrap{position:relative;z-index:2;max-width:620px;text-align:center}
-  .mark{font-size:0.6rem;letter-spacing:0.42em;text-transform:uppercase;color:var(--gold);margin-bottom:2.5rem;display:inline-flex;align-items:center;gap:1rem}
-  .mark::before,.mark::after{content:'';width:24px;height:1px;background:var(--gold-dim)}
-  .glyph{margin:0 auto 2.5rem;width:120px;height:120px;display:block}
-  .glyph .spin{transform-origin:60px 60px;animation:rot 36s linear infinite}
-  @keyframes rot{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-  h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(3rem,9vw,5.5rem);letter-spacing:0.06em;color:var(--white);line-height:1;margin-bottom:0.5rem}
-  h1 em{color:var(--gold);font-style:italic}
-  .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.25rem;color:var(--gold-dim);margin-bottom:3rem}
-  p{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:1.2rem;line-height:1.9;color:var(--text);margin-bottom:1.6rem}
-  p em{color:var(--gold-light);font-style:italic}
-  .rule{width:60px;height:1px;background:var(--gold-dim);margin:2.5rem auto}
-  .small{font-size:0.95rem;color:#8a8070;line-height:1.8}
-  a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.3)}
-  a:hover{color:var(--gold-light)}
-  .home{display:inline-block;margin-top:3rem;font-family:'DM Sans',sans-serif;font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--grey);border:none}
-  .home:hover{color:var(--gold)}
+  /* ── HERO ── */
+  header {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    overflow: hidden;
+  }
+
+  .ouroboros {
+    position: absolute;
+    width: 520px; height: 520px;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.16;
+    animation: rotate 120s linear infinite;
+    pointer-events: none;
+  }
+
+  .top-rule {
+    width: 1px; height: 80px;
+    background: linear-gradient(to bottom, transparent, var(--gold));
+    margin-bottom: 2rem;
+    animation: fadeDown 1.2s ease forwards;
+    opacity: 0;
+  }
+
+  .issue-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.38em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.4s forwards;
+  }
+
+  .masthead {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(4rem, 13vw, 9.5rem);
+    line-height: 0.88;
+    letter-spacing: 0.12em;
+    text-align: center;
+    color: var(--white);
+    opacity: 0;
+    animation: fadeUp 1s ease 0.6s forwards;
+  }
+  .masthead span {
+    display: block;
+    color: var(--gold);
+    font-style: italic;
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    letter-spacing: 0.18em;
+  }
+
+  .tagline {
+    margin-top: 2.5rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    text-align: center;
+    opacity: 0;
+    animation: fadeUp 1s ease 1s forwards;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    opacity: 0;
+    animation: fadeUp 1s ease 1.2s forwards;
+  }
+  .divider-line { width: 60px; height: 1px; background: linear-gradient(to right, transparent, var(--gold-dim)); }
+  .divider-line.right { background: linear-gradient(to left, transparent, var(--gold-dim)); }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem; left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.58rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--grey);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    animation: fadeUp 1s ease 2s forwards;
+  }
+  .scroll-hint::after {
+    content: '';
+    width: 1px; height: 40px;
+    background: linear-gradient(to bottom, var(--grey), transparent);
+    animation: pulse 2s ease infinite;
+  }
+
+  /* ── INTRO ── */
+  .intro-section {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 6rem 3rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+  .intro-section p {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 1.25rem;
+    line-height: 1.9;
+    color: #8a8070;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .intro-section p em { color: var(--gold-light); font-style: italic; }
+
+  /* ── TRILOGY ── */
+  .trilogy-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 3rem 6rem;
+  }
+
+  .trilogy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 3rem;
+  }
+
+  .trilogy-card {
+    background: var(--deep);
+    padding: 3rem 2.5rem;
+    border: 1px solid rgba(201,168,76,0.07);
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: border-color 0.3s, background 0.3s;
+    overflow: hidden;
+  }
+  .trilogy-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    transform-origin: left;
+  }
+  .trilogy-card:hover { border-color: rgba(201,168,76,0.25); background: #111009; }
+  .trilogy-card:hover::before { transform: scaleX(1); }
+
+  .card-part {
+    font-size: 0.55rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 1.5rem;
+  }
+
+  .card-roman {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 4rem;
+    color: rgba(201,168,76,0.1);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    transition: color 0.3s;
+  }
+  .trilogy-card:hover .card-roman { color: rgba(201,168,76,0.2); }
+
+  .card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+
+  .card-excerpt {
+    font-size: 0.82rem;
+    line-height: 1.75;
+    color: #5a5248;
+    margin-bottom: 2rem;
+  }
+
+  .card-read {
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: gap 0.3s;
+  }
+  .card-read::after { content: '→'; }
+  .trilogy-card:hover .card-read { gap: 0.9rem; }
+
+  .card-meta {
+    position: absolute;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    font-size: 0.5rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--grey);
+  }
+
+  /* ── QUOTE ── */
+  .quote-break {
+    background: var(--deep);
+    border-left: 2px solid var(--gold);
+    padding: 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .quote-break::before {
+    content: '\201C';
+    position: absolute;
+    top: -2rem; left: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14rem;
+    color: rgba(201,168,76,0.04);
+    line-height: 1;
+    pointer-events: none;
+  }
+  .quote-break blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(1.6rem, 3.5vw, 3rem);
+    line-height: 1.35;
+    color: var(--white);
+    max-width: 820px;
+    position: relative;
+    z-index: 1;
+  }
+  .quote-break blockquote em { color: var(--gold); font-style: normal; }
+  .quote-attribution {
+    margin-top: 1.5rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+  }
+
+  /* ── ABOUT ── */
+  .about-strip {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 6rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    border-top: 1px solid rgba(201,168,76,0.1);
+  }
+  .about-strip h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+  }
+  .about-strip h2 em { color: var(--gold); font-style: italic; }
+  .about-strip p {
+    font-size: 0.88rem;
+    line-height: 1.85;
+    color: #6a6058;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 900px) {
+    .trilogy-grid { grid-template-columns: 1fr; }
+    .about-strip { grid-template-columns: 1fr; gap: 2rem; }
+    .trilogy-section, .intro-section { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .quote-break { padding: 3rem 1.5rem; }
+  }
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="mark">You Have Arrived</div>
 
-    <svg class="glyph" viewBox="0 0 120 120" fill="none">
-      <g class="spin">
-        <circle cx="60" cy="60" r="52" stroke="#c9a84c" stroke-width="0.8" opacity="0.5"/>
-        <circle cx="60" cy="60" r="40" stroke="#7a6230" stroke-width="0.5" opacity="0.6"/>
-        <path d="M60 14 L98 60 L60 106 L22 60 Z" stroke="#c9a84c" stroke-width="0.6" opacity="0.5" fill="none"/>
-        <line x1="60" y1="8" x2="60" y2="40" stroke="#e2c97e" stroke-width="1"/>
-      </g>
-      <circle cx="60" cy="60" r="5" fill="#c9a84c"/>
-      <circle cx="60" cy="60" r="11" stroke="#7a6230" stroke-width="1" fill="none"/>
-    </svg>
+<!-- HERO -->
+<header>
+  <svg class="ouroboros" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="200" cy="200" r="185" fill="none" stroke="#c9a84c" stroke-width="0.4" opacity="0.3"/>
+    <circle cx="200" cy="200" r="110" fill="none" stroke="#c9a84c" stroke-width="0.4" opacity="0.2"/>
+    <path d="M 200 25 C 290 25, 370 95, 375 185 C 380 275, 320 358, 230 375 C 140 392, 45 335, 28 245 C 11 155, 65 65, 155 35 C 170 30, 185 26, 200 25"
+      fill="none" stroke="#c9a84c" stroke-width="14" stroke-linecap="round" opacity="0.7"/>
+    <path d="M 200 25 C 290 25, 370 95, 375 185 C 380 275, 320 358, 230 375 C 140 392, 45 335, 28 245 C 11 155, 65 65, 155 35 C 170 30, 185 26, 200 25"
+      fill="none" stroke="#e2c97e" stroke-width="4" stroke-linecap="round" opacity="0.2" stroke-dasharray="6 10"/>
+    <ellipse cx="200" cy="25" rx="16" ry="11" fill="#0f0e0c" stroke="#c9a84c" stroke-width="1.5" opacity="0.9"/>
+    <circle cx="205" cy="22" r="2.5" fill="#c9a84c" opacity="0.9"/>
+    <circle cx="205" cy="22" r="1" fill="#080808"/>
+    <path d="M 188 28 L 178 33 M 178 33 L 173 30 M 178 33 L 173 37" fill="none" stroke="#c9a84c" stroke-width="1.2" opacity="0.8"/>
+    <path d="M 157 35 C 165 28, 178 25, 188 27" fill="none" stroke="#c9a84c" stroke-width="8" stroke-linecap="round" opacity="0.6"/>
+    <circle cx="200" cy="200" r="18" fill="none" stroke="#c9a84c" stroke-width="0.8" opacity="0.5"/>
+    <circle cx="200" cy="200" r="4" fill="#c9a84c" opacity="0.6"/>
+    <line x1="200" y1="175" x2="200" y2="185" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+    <line x1="200" y1="215" x2="200" y2="225" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+    <line x1="175" y1="200" x2="185" y2="200" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+    <line x1="215" y1="200" x2="225" y2="200" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+  </svg>
 
-    <h1>Da'<em>ath</em></h1>
-    <div class="sub">— the threshold you decoded —</div>
-
-    <p>You read it as a message. It was an <em>address</em>.</p>
-
-    <p>This is the whole argument, enacted in miniature. The cipher contained no meaning to be extracted. It contained a <em>location</em> — and the only way to receive it was to arrive.</p>
-
-    <p>This is what we believe the tradition has always transmitted: not answers, but coordinates. Not content, but the way to the threshold. The Visitor sends no messages. It leaves a door, and the means to find it.</p>
-
-    <div class="rule"></div>
-
-    <p class="small">You are among the few who crossed. If you wish to go further in — the complete private edition, and first word of <em>Issue VI: The New Threshold</em> — write to us, and say only: <em>I arrived at Da'ath.</em></p>
-
-    <p class="small"><a href="mailto:thehiddencanon@proton.me?subject=I%20arrived%20at%20Da'ath">thehiddencanon@proton.me</a></p>
-
-    <a href="../index.html" class="home">← Return to the surface</a>
+  <div class="top-rule"></div>
+  <div class="issue-label">Issue I · The Visitor Trilogy</div>
+  <h1 class="masthead">The<br><span>Hidden</span>Canon</h1>
+  <p class="tagline">Esoteric History · Occult Philosophy · Hidden Tradition</p>
+  <div class="divider">
+    <div class="divider-line"></div>
+    <span style="color:var(--gold)">✦</span>
+    <div class="divider-line right"></div>
   </div>
+  <div class="scroll-hint">Scroll</div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">The Hidden Canon</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="the-visitor-i.html">The Visitor</a></li>
+    <li><a href="the-exiles-i.html">The Exiles</a></li>
+    <li><a href="the-architects-i.html">The Architects</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <a href="index.html#subscribe" class="nav-subscribe">Subscribe</a>
+</nav>
+
+<!-- INTRO -->
+<div class="intro-section">
+  <p>A journal of esoteric history, occult philosophy, and the hidden traditions of Western thought. Our first issue is given entirely to a single inquiry: <em>the recurring encounter, across centuries and cultures, with an intelligence that presents itself as non-human — and what this means.</em></p>
+</div>
+
+<!-- TRILOGY -->
+<div class="trilogy-section">
+  <div class="section-label">Issue I — The Visitor Trilogy</div>
+  <div class="trilogy-grid">
+
+    <a href="the-visitor-i.html" class="trilogy-card">
+      <div class="card-part">Part One</div>
+      <div class="card-roman">I</div>
+      <div class="card-title">The Visitor</div>
+      <p class="card-excerpt">The Golden Dawn, Crowley, the Tarot, and the recurring appearance of an entity no one can name — but many have met. An investigation into the pattern that runs beneath Western esotericism.</p>
+      <span class="card-read">Read</span>
+      <div class="card-meta">~20 min</div>
+    </a>
+
+    <a href="the-visitor-ii.html" class="trilogy-card">
+      <div class="card-part">Part Two</div>
+      <div class="card-roman">II</div>
+      <div class="card-title">The Chain of Evidence</div>
+      <p class="card-excerpt">A 1918 drawing, a government-funded study at the University of New Mexico, and the neuroscience of DMT entities. What the evidence tells us — and what it cannot explain.</p>
+      <span class="card-read">Read</span>
+      <div class="card-meta">~20 min</div>
+    </a>
+
+    <a href="the-visitor-iii.html" class="trilogy-card">
+      <div class="card-part">Part Three</div>
+      <div class="card-roman">III</div>
+      <div class="card-title">What You Do With What You Receive</div>
+      <p class="card-excerpt">Crowley, Parsons, and Hubbard. Three men who stood at the same threshold. One was consumed. One was transformed. One built a religion from the wreckage.</p>
+      <span class="card-read">Read</span>
+      <div class="card-meta">~20 min</div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- EXILES TRILOGY -->
+<div class="trilogy-section" style="border-top: 1px solid rgba(201,168,76,0.1);">
+  <div class="section-label">Issue II — The Exiles Trilogy</div>
+  <div class="trilogy-grid">
+
+    <a href="the-exiles-i.html" class="trilogy-card">
+      <div class="card-part">Part One</div>
+      <div class="card-roman">I</div>
+      <div class="card-title">Babylon</div>
+      <p class="card-excerpt">What happened when the most monotheistic people in the ancient world were taken captive by the most sophisticated magical civilization on earth — and what they brought home.</p>
+      <span class="card-read">Read</span>
+      <div class="card-meta">~20 min</div>
+    </a>
+
+    <a href="the-exiles-ii.html" class="trilogy-card">
+      <div class="card-part">Part Two</div>
+      <div class="card-roman">II</div>
+      <div class="card-title">The Map</div>
+      <p class="card-excerpt">How the scattered insights of a people in exile crystallized into the most elaborate cartography of consciousness the Western tradition has ever produced — and where the Visitor lives on that map.</p>
+      <span class="card-read">Read</span>
+      <div class="card-meta">~20 min</div>
+    </a>
+
+    <a href="the-exiles-iii.html" class="trilogy-card">
+      <div class="card-part">Part Three</div>
+      <div class="card-roman">III</div>
+      <div class="card-title">The Failure of Translation</div>
+      <p class="card-excerpt">Every civilization that has encountered the same phenomenon has translated it into the language available to it. Every translation has failed. The phenomenon has not.</p>
+      <span class="card-read">Read</span>
+      <div class="card-meta">~20 min</div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ARCHITECTS TRILOGY -->
+<div class="trilogy-section" style="border-top: 1px solid rgba(201,168,76,0.1);">
+  <div class="section-label">Issue III — The Architects Trilogy</div>
+  <div class="trilogy-grid">
+
+    <a href="the-architects-i.html" class="trilogy-card">
+      <div class="card-part">Part One</div>
+      <div class="card-roman">I</div>
+      <div class="card-title">The Builders</div>
+      <p class="card-excerpt">Pythagoras, Plato, Plotinus. Three men who encountered the same threshold and built something that outlasted them. The question of why some survive the crossing while others do not begins with what they built — and whether they built it to last.</p>
+      <span class="card-read">Read</span>
+      <div class="card-meta">~20 min</div>
+    </a>
+
+    <a href="the-architects-ii.html" class="trilogy-card">
+      <div class="card-part">Part Two</div>
+      <div class="card-roman">II</div>
+      <div class="card-title">The Language That Almost Works</div>
+      <p class="card-excerpt">Why Plotinus survived the crossing that destroyed others — and what his single Greek word, hoion, tells us about the relationship between language and the encounter it cannot describe.</p>
+      <span class="card-read">Read</span>
+      <div class="card-meta">~20 min</div>
+    </a>
+
+    <a href="the-architects-iii.html" class="trilogy-card">
+      <div class="card-part">Part Three</div>
+      <div class="card-roman">III</div>
+      <div class="card-title">The Return of the Question</div>
+      <p class="card-excerpt">What happens when the tradition runs out — when the containers break, the languages fail, and the Visitor arrives in a world that has forgotten how to receive it. And what this means for what comes next.</p>
+      <span class="card-read">Read</span>
+      <div class="card-meta">~20 min</div>
+    </a>
+
+  </div>
+</div>
+
+<!-- QUOTE -->
+<div class="quote-break">
+  <blockquote>"The Visitor keeps arriving. Each age reaches for the most extreme vocabulary available — because ordinary vocabulary is not adequate to describe what happens when the membrane between the known and the unknown becomes, briefly, <em>permeable.</em>"</blockquote>
+  <div class="quote-attribution">— The Hidden Canon, Issue I</div>
+</div>
+
+<!-- ABOUT STRIP -->
+<div class="about-strip">
+  <div>
+    <h2>About <em>The Canon</em></h2>
+    <p>The Hidden Canon is an independent journal devoted to the serious study of esoteric history, occult philosophy, and the hidden traditions of Western thought.</p>
+    <p>We treat our subjects with the same rigour applied to any other field of historical and philosophical inquiry. We follow the evidence — wherever it leads.</p>
+  </div>
+  <div>
+    <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; color:#7a7060; line-height:1.8;">A <em>canon</em> is a body of authoritative texts — the recognised, the approved, the officially transmitted. The hidden canon is everything else: the knowledge that circulated in margins and ciphers, the transmissions that survived not through institutions but through individuals who understood what they were carrying.</p>
+    <p style="margin-top:1rem;"><a href="about.html" style="font-size:0.6rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold); text-decoration:none;">Read more →</a></p>
+  </div>
+</div>
+
+<!-- SUBSCRIBE -->
+<div id="subscribe" class="subscribe-section">
+  <h2>Enter the Canon</h2>
+  <p>New issues delivered when they are ready. Free access, always.</p>
+
+  <!-- Brevo Form -->
+  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+  <style>
+    #sib-container { background-color: transparent !important; border: 1px solid rgba(201,168,76,0.25) !important; border-radius: 0 !important; max-width: 480px !important; margin: 2rem auto 0 !important; }
+    #sib-container input { background: rgba(201,168,76,0.04) !important; border: none !important; color: var(--white) !important; font-family: "DM Sans", sans-serif !important; font-size: 1rem !important; border-radius: 0 !important; }
+    #sib-container input::placeholder { color: #3a3530 !important; }
+    #sib-container .sib-form-block p { color: var(--gold) !important; font-family: "Cormorant Garamond", serif !important; font-size: 0 !important; display: none !important; }
+    #sib-container .sib-text-form-block { display: none !important; }
+    #sib-container .entry__label { display: none !important; }
+    #sib-container .entry__specification { display: none !important; }
+    .sib-form-block__button { background-color: var(--gold) !important; color: #080808 !important; font-family: "DM Sans", sans-serif !important; font-size: 0.72rem !important; letter-spacing: 0.2em !important; border-radius: 0 !important; padding: 1rem 2rem !important; width: 100% !important; cursor: pointer !important; }
+    .sib-form-block__button:hover { background-color: var(--gold-light) !important; }
+    .sib-form { background-color: transparent !important; }
+    #error-message, #success-message { max-width: 480px !important; margin: 0 auto !important; font-family: "DM Sans", sans-serif !important; font-size: 0.8rem !important; }
+  </style>
+
+  <div class="sib-form" style="text-align:center; background-color:transparent;">
+    <div id="sib-form-container" class="sib-form-container">
+      <div id="error-message" class="sib-form-message-panel" style="font-size:14px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949; max-width:480px; margin:0 auto;">
+        <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+          <span class="sib-form-message-panel__inner-text">Your subscription could not be saved. Please try again.</span>
+        </div>
+      </div>
+      <div id="success-message" class="sib-form-message-panel" style="font-size:14px; text-align:left; font-family:Helvetica, sans-serif; color:#085229; background-color:#e7faf0; border-radius:3px; border-color:#13ce66; max-width:480px; margin:0 auto;">
+        <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+          <span class="sib-form-message-panel__inner-text">Your subscription has been successful.</span>
+        </div>
+      </div>
+      <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:center; max-width:480px; direction:ltr">
+        <form id="sib-form" method="POST" action="https://7c161605.sibforms.com/serve/MUIFAFy6J9fgryF1YQcsi-6hNmsqtKa3X5gxPLb7P-VghYBq5yNg725gGL_cJlzRl0scsqrrPb8SJoXgbzfjUA4Z1Z8RUMy8tEHbFG4N5KE5i1A17X4Au4QJ5Tv9hqBb94eojVcN5IGotv_2UkSfK9vU8k5UwQUc2awIklV7WXdyyRrnipXPA2zzxCKS7qoFIg3rbBbg_OfZAtr1RQ==" data-type="subscription">
+          <div style="padding: 8px 0;">
+            <div class="sib-input sib-form-block">
+              <div class="form__entry entry_block">
+                <div class="form__label-row">
+                  <div class="entry__field">
+                    <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="email" placeholder="your@email.com" data-required="true" required style="font-size:1rem;" />
+                  </div>
+                </div>
+                <label class="entry__error entry__error--primary" style="font-size:14px; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;"></label>
+              </div>
+            </div>
+          </div>
+          <div style="padding: 8px 0;">
+            <div class="sib-form-block" style="text-align:center">
+              <button class="sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">SUBSCRIBE</button>
+            </div>
+          </div>
+          <input type="text" name="email_address_check" value="" class="input--hidden">
+          <input type="hidden" name="locale" value="en">
+        </form>
+      </div>
+    </div>
+  </div>
+  <script>
+    window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
+    window.LOCALE = 'en';
+    window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+    window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank.";
+    window.GENERIC_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+    window.translation = { common: { selectedList: '{quantity} list selected', selectedLists: '{quantity} lists selected', selectedOption: '{quantity} selected', selectedOptions: '{quantity} selected' } };
+    var AUTOHIDE = Boolean(0);
+  </script>
+  <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+
+  <p style="margin-top:1.5rem; font-size:0.58rem; color:#3a3530; letter-spacing:0.1em;">Or write to us: <a href="mailto:thehiddencanon@proton.me" style="color:var(--gold-dim); text-decoration:none;">thehiddencanon@proton.me</a></p>
+</div>
+
+<footer>
+  <div class="footer-logo">The Hidden Canon</div>
+  <div class="footer-text"><a href="https://x.com/ThehiddenCanon" target="_blank" rel="noopener" style="color:var(--gold-dim); text-decoration:none;">@ThehiddenCanon</a></div>
+  <div class="footer-text">Issue I · 2025</div>
+  <div class="footer-text">✦ Omnia in Mentis ✦</div>
+</footer>
+
 </body>
 </html>
